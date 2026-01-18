@@ -26,8 +26,8 @@ public class Main {
             ModelToText m2t = new ModelToText();
             String yamlOutput = m2t.generate(pipelineModel);
 
-            System.out.println("GITHUB ACTIONS WORKFLOW");
-            System.out.println(yamlOutput);
+            System.out.println("GITHUB  WORKFLOW");
+            //System.out.println(yamlOutput);
 
         } catch (Exception e) {
             System.err. println("\nERROR OCCURRED:");
