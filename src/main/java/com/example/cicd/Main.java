@@ -14,13 +14,14 @@ public class Main {
             PipelineInput input = createSampleInput();
             System.out.println("Created pipeline input");
 
-            String flexmiXml = FlexmiWriter.generateFlexmi(input);
+            String flexmiXml = FlexmiWriter.generateFlexmi(input);//java -> flexmi
             String flexmiPath = "src/main/resources/samples/generated-input.flexmi";
             FileManager.writeFile(flexmiPath, flexmiXml);
             System.out.println("Generated Flexmi model\n");
 
             ModelToModel m2m = new ModelToModel();
             EmfModel pipelineModel = m2m.transform(flexmiPath);
+
 
             ModelToText m2t = new ModelToText();
             String yamlOutput = m2t.generate(pipelineModel);

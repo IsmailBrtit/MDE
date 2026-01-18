@@ -3,6 +3,8 @@ package com.example.cicd.transformations;
 import com.example.cicd.helpers. ModelLoader;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.etl.EtlModule;
+import java.util.Collections;
+import org.eclipse.emf.common.util.URI;
 
 import java.io.File;
 
@@ -38,6 +40,11 @@ public class ModelToModel {
         etlModule.getContext().getModelRepository().addModel(pipelineModel);
 
         etlModule.execute();
+
+        pipelineModel.getResource().setURI(URI.createFileURI(
+                new File("src/main/resources/output/generated-model-pipeline.xmi").getAbsolutePath()
+        ));
+        pipelineModel.getResource().save(Collections.emptyMap());
 
         System.out.println("M2M done");
 
