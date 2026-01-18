@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?nsuri input?>
-<PipelineInput pipelineName="CI/CD Pipeline">
+<PipelineInput pipelineName="Pipeline">
   <jobs>
     <Job name="build" runsOn="ubuntu-latest">
       <envVariables>

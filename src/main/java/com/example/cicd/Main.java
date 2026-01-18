@@ -36,8 +36,9 @@ public class Main {
         }
     }
 
+    //ur pipline DTO
     private static PipelineInput createSampleInput() {
-        PipelineInput input = new PipelineInput("CI/CD Pipeline");
+        PipelineInput input = new PipelineInput("Pipeline");
 
         Job buildJob = new Job("build");
         buildJob.addEnvVariable(new EnvVariable("JAVA_HOME", "/usr/lib/jvm/java-11"));

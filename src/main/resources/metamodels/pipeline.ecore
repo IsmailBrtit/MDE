@@ -3,18 +3,18 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pipeline" nsURI="pipeline" nsPrefix="pipeline">
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowFile">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="on" lowerBound="1" eType="#//TriggerConfig"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" upperBound="-1" eType="#//Job"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="on" lowerBound="1" eType="#//TriggerConfig" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" lowerBound="1" upperBound="-1" eType="#//Job"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TriggerConfig">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" lowerBound="1" upperBound="-1"
         eType="#//Event" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventType" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" lowerBound="1" upperBound="-1"
         eType="#//Branch" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Branch">
