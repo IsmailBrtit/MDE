@@ -70,6 +70,6 @@ public class Main {
         String ans = readLine(sc);
         if (ans.isEmpty()) return false;
         ans = ans.trim().toLowerCase();
-        return ans.equals("y") || ans.equals("o") || ans.equals("oui") || ans.equals("yes");
+        return ans.equals("y") || ans.equals("si") || ans.equals("oui") || ans.equals("yes");
     }
 }
