@@ -21,6 +21,7 @@ target/
 .springBeans
 .sts4-cache
 documentation.md
+trace.md
 
 ### NetBeans ###
 /nbproject/private/
