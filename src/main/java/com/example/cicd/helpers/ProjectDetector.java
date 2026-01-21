@@ -24,17 +24,18 @@ public class ProjectDetector {
             return "java-gradle";
         }
 
-        // Vérifier Node.js/npm (pom.xml)
-        if (fileExists(basePath, "pom.xml")) {
-            System.out.println("Detected project type: node-npm (found pom.xml)");
+        // Vérifier Node.js/npm (package.json)
+        if (fileExists(basePath, "package.json")) {
+            System.out.println("Detected project type: node-npm (found package.json)");
             return "node-npm";
         }
 
-        System.out.println("Defaulting project type is: " + DEFAULT_PROJECT_TYPE);
+        System.out.println("No project file found, defaulting to: " + DEFAULT_PROJECT_TYPE);
         return DEFAULT_PROJECT_TYPE;
     }
 
     private static boolean fileExists(Path basePath, String fileName) {
-        return Files.exists(basePath.resolve(fileName));
+        boolean exists = Files.exists(basePath.resolve(fileName));
+        return exists;
     }
 }
